@@ -5,7 +5,9 @@ A simple game to exercise your visual memory
 ## Usage
 
 > lein cljsbuild once prod
+
 > lein run
+
 > http://localhost:3000/app.html
 
 ## License
