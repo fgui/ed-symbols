@@ -106,27 +106,34 @@
 (defn colors-component []
   [:div
    (map (fn [x]
-          [:span.glyphicon
+          [:a
            {:key x
             :on-click #(do-answer x)
-            :style
-            (css css-element
-                 {:background-color x :padding "25px"})}
-           ]) colors)
+            :href "javascript:void(0)"
+            }
+           [:span.glyphicon
+            {
+             :style
+             (css css-element
+                  {:background-color x :padding "25px"})}
+            ]]) colors)
    ]
   )
 
 (defn symbols-component []
   [:div {:style {:font-size "30px"}}
    (map (fn [x]
-          [:span.glyphicon
-           {:class (str "glyphicon-" x)
-            :on-click #(do-answer x)
+          [:a
+           {:on-click #(do-answer x)
             :key x
-            :style css-element
-            }]) symbols)
+            :href "javascript:void(0)"
+            :style {:color "black"}
+            }
+           [:span.glyphicon
+            {:class (str "glyphicon-" x)
+             :style css-element
+             }]]) symbols)
    ]
-
   )
 
 (defn word-component []
